@@ -62,8 +62,12 @@ getBooksAndMoviesAsync()
       });
 })
 
-getBooksOrMoviesAsync().then(results => { 
+getBooksOrMoviesAsync()
+  .then(results => {
     console.log("movies OR books", {
-    results,
-  });
-});
+      results
+    });
+  })
+  .catch(error =>
+    console.error("Error in getBooksOrMoviesAsync execution", error)
+  );
